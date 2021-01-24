@@ -7,6 +7,9 @@ public class BookPage {
         this.pageNumber = pageNumber;
     }
 
+    public BookPage() {
+    }
+
     public int getPageNumber() {
         return pageNumber;
     }

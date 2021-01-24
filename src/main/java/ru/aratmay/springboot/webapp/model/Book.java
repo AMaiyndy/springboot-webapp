@@ -21,6 +21,9 @@ public class Book {
             .collect(Collectors.toList());
     }
 
+    public Book() {
+    }
+
     public String getTitle() {
         return title;
     }

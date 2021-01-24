@@ -37,12 +37,12 @@ public class BookRestControllerV1 {
         return new ResponseEntity<>(book, HttpStatus.OK);
     }
 
-    @RequestMapping(value = "", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
-    public ResponseEntity<Response> saveCustomer(@RequestBody @Valid Book book) {
+    @RequestMapping(value = "books/update", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+    public ResponseEntity<Response> updateBook(@RequestBody @Valid Book book) {
         if (book == null) {
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
 
-        return new ResponseEntity<>(new Response(book.toString()), HttpStatus.OK);
+        return new ResponseEntity<>(new Response("OK!"), HttpStatus.OK);
     }
 }
