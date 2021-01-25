@@ -32,7 +32,7 @@ public class BookRestControllerV1 {
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
 
-        Book book = new Book("Random Book", new Random().nextInt(500), new Author("Random Author"));
+        Book book = new Book("Random Book", new Random().nextInt(8), new Author("Random Author"));
 
         return new ResponseEntity<>(book, HttpStatus.OK);
     }
