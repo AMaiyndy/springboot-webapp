@@ -16,10 +16,8 @@ import javax.validation.Valid;
 import java.util.Random;
 
 /**
- * REST controller for connected requests.
+ * REST controller
  *
- * @author Eugene Suleimanov
- * @version 1.0
  */
 
 @RestController
@@ -38,11 +36,11 @@ public class BookRestControllerV1 {
     }
 
     @RequestMapping(value = "books/update", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
-    public ResponseEntity<Response> updateBook(@RequestBody @Valid Book book) {
+    public ResponseEntity<Book> updateBook(@RequestBody @Valid Book book) {
         if (book == null) {
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
 
-        return new ResponseEntity<>(new Response("OK!"), HttpStatus.OK);
+        return new ResponseEntity<>(book, HttpStatus.OK);
     }
 }

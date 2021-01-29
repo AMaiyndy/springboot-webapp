@@ -3,6 +3,7 @@
 <html ng-app="bookDemo">
 <head>
     <title>Title</title>
+    <link rel="stylesheet" href="<c:url value="/resources/css/styles.css"/>"/>
     <script src="<c:url value="/resources/js/angular.min.js"/>"></script>
     <script src="<c:url value="/resources/js/app.js"/>"></script>
     <script src="<c:url value="/resources/js/controller/book_cntrl.js"/>"></script>
@@ -19,12 +20,12 @@
 </div>
 <div>
     <div>
-        <input type="button" style="cursor:pointer" value="Get a fucking book!" ng-click ="getBook()" ng-disabled="buttonDisabled"/>
+        <input type="button" style="cursor:pointer" value="Get book!" ng-click ="getBook()" ng-disabled="getBookButtonDisabled"/>
         <%--            <button type="button" ng-click="bookCtrl.reset()" class="btn">Reset Form</button>--%>
     </div>
 </div>
-
 <h3>JSON:</h3>
-<div><pre>{{book | json}}</pre></div>
+<span class="textarea" contenteditable="true"><pre>{{book | json}}</pre></span>
+<input type="button" style="cursor:pointer" value="Update Book!" ng-click ="updateBook()" ng-disabled="updateBookDisabled"/>
 </body>
 </html>
